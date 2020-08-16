@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "6cc330cf-d549-4dca-acbf-39a437712718",
+		"name": "AHeady-Sat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index / Systemcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}",
+					"host": [
+						"{{URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products-add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Oneplus 7 PRO\",\n\t\"price\": 40999.99,\n\t\"sku\": \"ONEPLUS#1234\",\n\t\"category\":[\"Mobile\", \"Main category\"]\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/products",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products-list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":\"Mobiles\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/products",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products-update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Oneplus 7 PRO\",\n\t\"price\": 40999.99,\n\t\"sku\": \"ONEPLUS#1234\",\n\t\"category\":[ \"Mobile\", \"Mobiles\"]\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/products/5d554d58ca912c106a82ef7a",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"5d554d58ca912c106a82ef7a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category-add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Main category 2\",\n\t\"parent\":\"Main category 1\",\n\t\"order\" : 3\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/category",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category-list-all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Main category 2\",\n\t\"parent\":\"Main category 1\",\n\t\"order\" : 1\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/category",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
